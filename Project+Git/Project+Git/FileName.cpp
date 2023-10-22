@@ -18,10 +18,15 @@ int main()
 		{
 			if (str[i] == ' ')
 			{
-
+				fprintf(f2, "%c", str);
+				fprintf(f2, "%c", "------------");
+				break;
 			}
 		}
 	}
+
+	fclose(f1);
+	fclose(f2);
 
 
 
