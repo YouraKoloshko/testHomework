@@ -9,18 +9,22 @@ int main()
 	char str[100] ;
 
 	f1 = fopen("File1.txt", "r");
-	f2 = fopen("File2.txt", "w");
+	f2 = fopen("File2.txt", "a");
 
 	for (int i = 0; i < 4; i++)
 	{
 		fgets(str, 100, f1);
-		for (int i = 0; i < strlen(str); i++)
+		for (int i = 0; i < strlen(str)+ 1; i++)
 		{
 			if (str[i] == ' ')
 			{
-				fprintf(f2, "%c", str);
-				fprintf(f2, "%c", "------------");
+				fprintf(f2, "%s", str);
+				fprintf(f2, "%s", "------------\n");
 				break;
+			}
+			if (str[i] == '\n')
+			{
+				fprintf(f2, "%s", str);
 			}
 		}
 	}
